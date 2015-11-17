@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="-293.5" y="-27.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Web LoginVC-->
         <scene sceneID="lqA-7O-172">
             <objects>
-                <viewController id="RG9-nO-Z4U" sceneMemberID="viewController">
+                <viewController id="RG9-nO-Z4U" customClass="WebLoginVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="55E-FK-dec"/>
                         <viewControllerLayoutGuide type="bottom" id="Y89-Zj-XmM"/>
@@ -63,12 +63,49 @@
                     <view key="view" contentMode="scaleToFill" id="DJS-OU-qhZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIg-5Z-FR2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RG9-nO-Z4U" id="iJJ-6f-VWa"/>
+                                </connections>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eR-d7-kXh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="Lir-B6-Yzv">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="4WY-tZ-iM3">
+                                            <connections>
+                                                <action selector="cancelLogin:" destination="RG9-nO-Z4U" id="hOK-8q-HsS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9eR-d7-kXh" secondAttribute="trailing" id="6oe-5h-d32"/>
+                            <constraint firstItem="fIg-5Z-FR2" firstAttribute="leading" secondItem="9eR-d7-kXh" secondAttribute="leading" id="B5f-OM-ztL"/>
+                            <constraint firstItem="9eR-d7-kXh" firstAttribute="top" secondItem="55E-FK-dec" secondAttribute="bottom" id="IA4-np-rfR"/>
+                            <constraint firstItem="fIg-5Z-FR2" firstAttribute="bottom" secondItem="Y89-Zj-XmM" secondAttribute="top" id="TeX-d8-Yc5"/>
+                            <constraint firstItem="fIg-5Z-FR2" firstAttribute="top" secondItem="9eR-d7-kXh" secondAttribute="bottom" id="WNp-tl-FqX"/>
+                            <constraint firstItem="fIg-5Z-FR2" firstAttribute="trailing" secondItem="9eR-d7-kXh" secondAttribute="trailing" id="iTk-Kb-kDR"/>
+                            <constraint firstItem="9eR-d7-kXh" firstAttribute="leading" secondItem="DJS-OU-qhZ" secondAttribute="leading" id="zmE-Ba-oXw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginWebView" destination="fIg-5Z-FR2" id="FfR-A6-MgB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDb-nb-Qf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162.5" y="-27.5"/>
+            <point key="canvasLocation" x="149.5" y="-27.5"/>
         </scene>
     </scenes>
 </document>

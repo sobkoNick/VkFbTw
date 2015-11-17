@@ -15,6 +15,7 @@
 		1CC1F1E31BFB69D700B755AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC1F1E11BFB69D700B755AB /* LaunchScreen.storyboard */; };
 		1CC1F1EE1BFB69D700B755AB /* FbVkTwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1ED1BFB69D700B755AB /* FbVkTwTests.m */; };
 		1CC1F1F91BFB69D800B755AB /* FbVkTwUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1F81BFB69D800B755AB /* FbVkTwUITests.m */; };
+		1CC1F2081BFB6D0200B755AB /* WebLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F2071BFB6D0200B755AB /* WebLoginVC.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		1CC1F1F41BFB69D800B755AB /* FbVkTwUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FbVkTwUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC1F1F81BFB69D800B755AB /* FbVkTwUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FbVkTwUITests.m; sourceTree = "<group>"; };
 		1CC1F1FA1BFB69D800B755AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CC1F2061BFB6D0200B755AB /* WebLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebLoginVC.h; sourceTree = "<group>"; };
+		1CC1F2071BFB6D0200B755AB /* WebLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebLoginVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 				1CC1F1D71BFB69D700B755AB /* AppDelegate.m */,
 				1CC1F1D91BFB69D700B755AB /* ViewController.h */,
 				1CC1F1DA1BFB69D700B755AB /* ViewController.m */,
+				1CC1F2091BFB6D1400B755AB /* WebLoginVC */,
 				1CC1F1DC1BFB69D700B755AB /* Main.storyboard */,
 				1CC1F1DF1BFB69D700B755AB /* Assets.xcassets */,
 				1CC1F1E11BFB69D700B755AB /* LaunchScreen.storyboard */,
@@ -138,6 +142,15 @@
 				1CC1F1FA1BFB69D800B755AB /* Info.plist */,
 			);
 			path = FbVkTwUITests;
+			sourceTree = "<group>";
+		};
+		1CC1F2091BFB6D1400B755AB /* WebLoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				1CC1F2061BFB6D0200B755AB /* WebLoginVC.h */,
+				1CC1F2071BFB6D0200B755AB /* WebLoginVC.m */,
+			);
+			name = WebLoginVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +289,7 @@
 				1CC1F1DB1BFB69D700B755AB /* ViewController.m in Sources */,
 				1CC1F1D81BFB69D700B755AB /* AppDelegate.m in Sources */,
 				1CC1F1D51BFB69D700B755AB /* main.m in Sources */,
+				1CC1F2081BFB6D0200B755AB /* WebLoginVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
