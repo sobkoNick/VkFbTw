@@ -11,6 +11,7 @@
 @interface WebLoginVC : UIViewController <UIWebViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UIWebView *loginWebView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loginActivityIndicator;
 
 - (IBAction)cancelLogin:(id)sender;
 

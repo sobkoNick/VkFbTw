@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"login";
+    [self.loginActivityIndicator startAnimating];
     //[[self navigationController] setNavigationBarHidden:YES];
 }
 

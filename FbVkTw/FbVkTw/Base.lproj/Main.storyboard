@@ -87,19 +87,26 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sx7-SE-dFl">
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9eR-d7-kXh" secondAttribute="trailing" id="6oe-5h-d32"/>
                             <constraint firstItem="fIg-5Z-FR2" firstAttribute="leading" secondItem="9eR-d7-kXh" secondAttribute="leading" id="B5f-OM-ztL"/>
                             <constraint firstItem="9eR-d7-kXh" firstAttribute="top" secondItem="55E-FK-dec" secondAttribute="bottom" id="IA4-np-rfR"/>
+                            <constraint firstItem="Sx7-SE-dFl" firstAttribute="centerY" secondItem="fIg-5Z-FR2" secondAttribute="centerY" id="KJL-I7-dwb"/>
                             <constraint firstItem="fIg-5Z-FR2" firstAttribute="bottom" secondItem="Y89-Zj-XmM" secondAttribute="top" id="TeX-d8-Yc5"/>
                             <constraint firstItem="fIg-5Z-FR2" firstAttribute="top" secondItem="9eR-d7-kXh" secondAttribute="bottom" id="WNp-tl-FqX"/>
+                            <constraint firstItem="Sx7-SE-dFl" firstAttribute="centerX" secondItem="9eR-d7-kXh" secondAttribute="centerX" id="dqF-i9-ac5"/>
                             <constraint firstItem="fIg-5Z-FR2" firstAttribute="trailing" secondItem="9eR-d7-kXh" secondAttribute="trailing" id="iTk-Kb-kDR"/>
                             <constraint firstItem="9eR-d7-kXh" firstAttribute="leading" secondItem="DJS-OU-qhZ" secondAttribute="leading" id="zmE-Ba-oXw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginActivityIndicator" destination="Sx7-SE-dFl" id="mmz-tv-T8O"/>
                         <outlet property="loginWebView" destination="fIg-5Z-FR2" id="FfR-A6-MgB"/>
                     </connections>
                 </viewController>
