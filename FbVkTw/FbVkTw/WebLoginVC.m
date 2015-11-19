@@ -7,6 +7,7 @@
 //
 
 #import "WebLoginVC.h"
+#import "Requests.h"
 
 @interface WebLoginVC ()
 
@@ -19,6 +20,9 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"login";
     [self.loginActivityIndicator startAnimating];
+    
+    NSURLRequest *lRequest = (NSURLRequest *)[Requests VKloginRequest];
+    [self.loginWebView loadRequest:lRequest];
     //[[self navigationController] setNavigationBarHidden:YES];
 }
 
@@ -36,8 +40,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.loginActivityIndicator stopAnimating];
+    [self.loginActivityIndicator setHidden:YES];
+}
 
 - (IBAction)cancelLogin:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 @end

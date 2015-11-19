@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C68EDC51BFE65B30090090B /* Requests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C68EDC41BFE65B30090090B /* Requests.m */; settings = {ASSET_TAGS = (); }; };
 		1CC1F1D51BFB69D700B755AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1D41BFB69D700B755AB /* main.m */; };
 		1CC1F1D81BFB69D700B755AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1D71BFB69D700B755AB /* AppDelegate.m */; };
 		1CC1F1DB1BFB69D700B755AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1DA1BFB69D700B755AB /* ViewController.m */; };
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C68EDC21BFE59780090090B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
+		1C68EDC31BFE65B30090090B /* Requests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Requests.h; path = ../Requests.h; sourceTree = "<group>"; };
+		1C68EDC41BFE65B30090090B /* Requests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Requests.m; path = ../Requests.m; sourceTree = "<group>"; };
 		1CC1F1D01BFB69D700B755AB /* FbVkTw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FbVkTw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC1F1D41BFB69D700B755AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CC1F1D61BFB69D700B755AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C68EDC61BFE65C00090090B /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				1C68EDC31BFE65B30090090B /* Requests.h */,
+				1C68EDC41BFE65B30090090B /* Requests.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
 		1CC1F1C71BFB69D700B755AB = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +117,10 @@
 		1CC1F1D21BFB69D700B755AB /* FbVkTw */ = {
 			isa = PBXGroup;
 			children = (
+				1C68EDC21BFE59780090090B /* Constants.h */,
 				1CC1F1D61BFB69D700B755AB /* AppDelegate.h */,
 				1CC1F1D71BFB69D700B755AB /* AppDelegate.m */,
+				1C68EDC61BFE65C00090090B /* Requests */,
 				1CC1F1D91BFB69D700B755AB /* ViewController.h */,
 				1CC1F1DA1BFB69D700B755AB /* ViewController.m */,
 				1CC1F2091BFB6D1400B755AB /* WebLoginVC */,
@@ -288,6 +303,7 @@
 			files = (
 				1CC1F1DB1BFB69D700B755AB /* ViewController.m in Sources */,
 				1CC1F1D81BFB69D700B755AB /* AppDelegate.m in Sources */,
+				1C68EDC51BFE65B30090090B /* Requests.m in Sources */,
 				1CC1F1D51BFB69D700B755AB /* main.m in Sources */,
 				1CC1F2081BFB6D0200B755AB /* WebLoginVC.m in Sources */,
 			);
@@ -515,6 +531,7 @@
 				1CC1F1FF1BFB69D800B755AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CC1F2001BFB69D800B755AB /* Build configuration list for PBXNativeTarget "FbVkTwTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +540,7 @@
 				1CC1F2021BFB69D800B755AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CC1F2031BFB69D800B755AB /* Build configuration list for PBXNativeTarget "FbVkTwUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +549,7 @@
 				1CC1F2051BFB69D800B755AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
