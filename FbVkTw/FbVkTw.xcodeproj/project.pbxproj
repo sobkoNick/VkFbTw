@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5975A61BFF304300DCE1D8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5975A51BFF304300DCE1D8 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		1C5975A81BFF305300DCE1D8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5975A71BFF305300DCE1D8 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
 		1C68EDC51BFE65B30090090B /* Requests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C68EDC41BFE65B30090090B /* Requests.m */; settings = {ASSET_TAGS = (); }; };
 		1CC1F1D51BFB69D700B755AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1D41BFB69D700B755AB /* main.m */; };
 		1CC1F1D81BFB69D700B755AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1D71BFB69D700B755AB /* AppDelegate.m */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C5975A51BFF304300DCE1D8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1C5975A71BFF305300DCE1D8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		1C68EDC21BFE59780090090B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
 		1C68EDC31BFE65B30090090B /* Requests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Requests.h; path = ../Requests.h; sourceTree = "<group>"; };
 		1C68EDC41BFE65B30090090B /* Requests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Requests.m; path = ../Requests.m; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5975A61BFF304300DCE1D8 /* FBSDKLoginKit.framework in Frameworks */,
+				1C5975A81BFF305300DCE1D8 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C596F061BFF2FB300DCE1D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C5975A71BFF305300DCE1D8 /* FBSDKCoreKit.framework */,
+				1C5975A51BFF304300DCE1D8 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1C68EDC61BFE65C00090090B /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +143,7 @@
 				1CC1F1DF1BFB69D700B755AB /* Assets.xcassets */,
 				1CC1F1E11BFB69D700B755AB /* LaunchScreen.storyboard */,
 				1CC1F1E41BFB69D700B755AB /* Info.plist */,
+				1C596F061BFF2FB300DCE1D8 /* Frameworks */,
 				1CC1F1D31BFB69D700B755AB /* Supporting Files */,
 			);
 			path = FbVkTw;
@@ -256,6 +272,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				uk,
 			);
 			mainGroup = 1CC1F1C71BFB69D700B755AB;
 			productRefGroup = 1CC1F1D11BFB69D700B755AB /* Products */;
@@ -446,6 +464,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FbVkTw/Documents/FacebookSDKs-iOS-20151111",
+					"(1)",
+					"$(PROJECT_DIR)/FbVkTw",
+				);
 				INFOPLIST_FILE = FbVkTw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MykolaSobko.FbVkTw;
@@ -457,6 +481,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FbVkTw/Documents/FacebookSDKs-iOS-20151111",
+					"(1)",
+					"$(PROJECT_DIR)/FbVkTw",
+				);
 				INFOPLIST_FILE = FbVkTw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MykolaSobko.FbVkTw;

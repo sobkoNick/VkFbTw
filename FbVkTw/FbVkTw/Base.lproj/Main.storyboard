@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bzU-kH-yaF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -21,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-743" y="-27"/>
         </scene>
-        <!--View Controller-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -33,8 +34,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-9P-3Yt">
-                                <rect key="frame" x="107" y="547" width="161" height="49"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDo-cU-uDa" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="85" y="466" width="204" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="cfg-Zw-qv9"/>
+                                    <constraint firstAttribute="height" constant="44" id="zCt-jP-Kh1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="FBLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZdD-be-dqg"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cNg-DI-NWz"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-9P-3Yt">
+                                <rect key="frame" x="84" y="543" width="207" height="62"/>
                                 <color key="backgroundColor" red="0.96196205329999995" green="1" blue="0.2318965355" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Login to VK"/>
@@ -44,9 +57,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BDo-cU-uDa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ISK-76-lYF"/>
+                            <constraint firstItem="9TG-9P-3Yt" firstAttribute="top" secondItem="BDo-cU-uDa" secondAttribute="bottom" constant="33" id="V4E-Q6-elf"/>
+                            <constraint firstItem="9TG-9P-3Yt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="W9s-Jo-2dO"/>
+                            <constraint firstItem="9TG-9P-3Yt" firstAttribute="centerX" secondItem="BDo-cU-uDa" secondAttribute="centerX" id="aRG-tv-C9D"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9TG-9P-3Yt" secondAttribute="bottom" constant="62" id="isd-Pt-bOC"/>
+                            <constraint firstItem="BDo-cU-uDa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="402" id="qEB-mP-4tA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mOj-y6-r0M"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="FBLoginBtn" destination="BDo-cU-uDa" id="PAW-A9-Iqy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
