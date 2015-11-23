@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-static NSMutableURLRequest* _request;
+static NSMutableURLRequest* VKLoginURLRequest;
 
 @interface Requests : NSObject
 + (NSMutableURLRequest *) VKloginRequest;

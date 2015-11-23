@@ -11,12 +11,14 @@
 
 @implementation Requests
 
-+ (NSMutableURLRequest *) VKloginRequest{
-    _request = [[NSMutableURLRequest alloc] init];
+#pragma mark - Vk requests
+
++ (NSMutableURLRequest *) VKloginRequest {
+    VKLoginURLRequest = [[NSMutableURLRequest alloc] init];
     
-    NSString *lauthString = [NSString stringWithFormat:@"https://oauth.vk.com/authorize?client_id=%@&scope=%@&redirect_uri=%@&display=%@&v=%@&response_type=token", VK_APP_ID,VK_SCOPES,VK_REDIRECT_URI,VK_DISPLAY,VK_API_VERSION];
-    _request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:lauthString]];
+    NSString *loginString = [NSString stringWithFormat:@"https://oauth.vk.com/authorize?client_id=%@&scope=%@&redirect_uri=%@&display=%@&v=%@&response_type=token", VK_APP_ID,VK_SCOPES,VK_REDIRECT_URI,VK_DISPLAY,VK_API_VERSION];
+    VKLoginURLRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:loginString]];
     
-    return _request;
+    return VKLoginURLRequest;
 }
 @end
