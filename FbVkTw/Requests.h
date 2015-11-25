@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 static NSMutableURLRequest* VKLoginURLRequest;
+static NSMutableURLRequest* TWLoginURLRequest;
 
 @interface Requests : NSObject
 + (NSMutableURLRequest *) VKloginRequest;
++ (NSMutableURLRequest *) TWloginRequest;
 
 @end

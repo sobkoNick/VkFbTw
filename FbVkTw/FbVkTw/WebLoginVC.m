@@ -24,9 +24,16 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"login";
     [self.loginActivityIndicator startAnimating];
+    NSString * registerToStr = [[NSUserDefaults standardUserDefaults] valueForKey:WEB_LOGIN_TO];
+    if ([registerToStr  isEqual: @"Vk"]) {
+        NSURLRequest *lRequest = (NSURLRequest *)[Requests VKloginRequest];
+        [self.loginWebView loadRequest:lRequest];
+    }
+    if ([registerToStr  isEqual: @"Tw"]) {
+        NSURLRequest *lRequest = (NSURLRequest *)[Requests TWloginRequest];
+        [self.loginWebView loadRequest:lRequest];
+    }
     
-    NSURLRequest *lRequest = (NSURLRequest *)[Requests VKloginRequest];
-    [self.loginWebView loadRequest:lRequest];
     //[[self navigationController] setNavigationBarHidden:YES];
 }
 
@@ -84,9 +91,9 @@
         }];
         
         for (NSURLQueryItem *item in lQueryItems) {
-            if ([item.name isEqualToString:ACCESS_TOKEN_KEY]) {
+            if ([item.name isEqualToString:VK_ACCESS_TOKEN_KEY]) {
                 
-                [self saveLoginObject:item.value forKey:ACCESS_TOKEN_KEY];
+                [self saveLoginObject:item.value forKey:VK_ACCESS_TOKEN_KEY];
                 
             } else if ([item.name isEqualToString:USER_ID_KEY]) {
                 
@@ -104,7 +111,7 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:AUTH_COMPLITED_KEY];
     }
     
-    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN_KEY]);
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] valueForKey:VK_ACCESS_TOKEN_KEY]);
     return lResult;
 }
 

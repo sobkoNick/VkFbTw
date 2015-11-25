@@ -21,7 +21,7 @@
 
 #define USER_ID_KEY @"user_id"
 #define TOKEN_LIFE_TIME_KEY @"expires_in"
-#define ACCESS_TOKEN_KEY @"access_token"
+#define VK_ACCESS_TOKEN_KEY @"access_token"
 #define CREATED @"created"
 #define TEMPORAL_ERROR 3
 #define AUTH_COMPLITED_KEY @"authComplited"
@@ -51,6 +51,9 @@
 #define FACEBOOK_APP_ID @"423786924485895"
 
 #pragma mark - Twitter data
+
+#define WEB_LOGIN_TO @"loginto"
+#define TWITTER_ACCESS_TOKEN @"twitterToken"
 
 #define TWITTER_OAUTH_ACCESS_TOKEN @"2301498467-9Ie6PTemnblbTRKjz3mKCR4wPEcCq1RMKCR0GDj" // TOKEN ONLY FOR DEVELOPER
 #define TWITTER_OAUTH_ACCESS_SECRET @"cVlGiKHxFVjdCFMmSLVmNF2HJabdY6OpCTwj5yADIS0WO"

@@ -21,4 +21,15 @@
     
     return VKLoginURLRequest;
 }
+
++ (NSMutableURLRequest *) TWloginRequest {
+    TWLoginURLRequest = [[NSMutableURLRequest alloc] init];
+    
+    NSString *loginString = [NSString stringWithFormat:@"https://api.twitter.com/oauth/request_token"];
+    TWLoginURLRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:loginString]];
+    
+    return TWLoginURLRequest;
+}
+
+
 @end

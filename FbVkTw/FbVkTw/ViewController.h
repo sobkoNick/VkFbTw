@@ -15,5 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *VKLoginBtn;
 - (IBAction)LogInOrLogOut:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *TWLoginBtn;
+- (IBAction)TWLogInLogOut:(id)sender;
+
+
 @end
 
