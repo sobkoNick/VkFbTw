@@ -8,6 +8,7 @@
 
 #import "Requests.h"
 #import "Constants.h"
+#import "AFNetworking.h"
 
 @implementation Requests
 
@@ -27,6 +28,7 @@
     
     NSString *loginString = [NSString stringWithFormat:@"https://api.twitter.com/oauth/request_token"];
     TWLoginURLRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:loginString]];
+    
     
     return TWLoginURLRequest;
 }

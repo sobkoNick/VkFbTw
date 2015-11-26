@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "WebLoginVC.h"
 
+
 @interface ViewController ()
 
 @end
@@ -115,14 +116,29 @@
         [self.TWLoginBtn setTitle:@"Log In to Twitter" forState:UIControlStateNormal];
         isTwitterToken = NO;
     } else {
+        [[FHSTwitterEngine sharedEngine] permanentlySetConsumerKey:COSTUMER_API_KEY andSecret:COSTUMER_API_SECRET];
         
-        [[NSUserDefaults standardUserDefaults] setObject:@"Tw" forKey:WEB_LOGIN_TO];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[FHSTwitterEngine sharedEngine]setDelegate:self];
+        [[FHSTwitterEngine sharedEngine]loadAccessToken];
         
-        WebLoginVC *webLoginVC = [self.storyboard  instantiateViewControllerWithIdentifier:@"WebLoginVC"];
-        [self presentViewController:webLoginVC animated:YES completion:nil];
-        //[self.navigationController pushViewController:webLoginVC animated:YES];
+        UIViewController *loginController = [[FHSTwitterEngine sharedEngine] loginControllerWithCompletionHandler:^(BOOL success) {
+            if (success) {
+                // Login User
+            }
+        }];
+        [self presentViewController:loginController animated:YES completion:nil];
     }
-    
 }
+
+- (void)storeAccessToken:(NSString *)accessToken {
+    [[NSUserDefaults standardUserDefaults]setObject:accessToken forKey:TWITTER_ACCESS_TOKEN];
+    NSLog(@"tw token = %@", accessToken);
+    isTwitterToken = YES;
+}
+
+- (NSString *)loadAccessToken {
+    return [[NSUserDefaults standardUserDefaults]objectForKey:TWITTER_ACCESS_TOKEN];
+}
+
+
 @end

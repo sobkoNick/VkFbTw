@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "FHSTwitterEngine/FHSTwitterEngine.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <FHSTwitterEngineAccessTokenDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *VKLoginBtn;
 - (IBAction)LogInOrLogOut:(id)sender;

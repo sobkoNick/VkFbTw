@@ -9,6 +9,7 @@
 #import "WebLoginVC.h"
 #import "Requests.h"
 #import "Constants.h"
+#import "FHSTwitterEngine/FHSTwitterEngine.h"
 
 @interface WebLoginVC ()
 - (BOOL)getUserAthorizationData:(NSURL *)requestUrlString;
@@ -30,8 +31,16 @@
         [self.loginWebView loadRequest:lRequest];
     }
     if ([registerToStr  isEqual: @"Tw"]) {
-        NSURLRequest *lRequest = (NSURLRequest *)[Requests TWloginRequest];
-        [self.loginWebView loadRequest:lRequest];
+        //NSURLRequest *lRequest = (NSURLRequest *)[Requests TWloginRequest];
+        //[self.loginWebView loadRequest:lRequest];
+        
+        [[FHSTwitterEngine sharedEngine] permanentlySetConsumerKey:COSTUMER_API_KEY andSecret:COSTUMER_API_SECRET];
+        UIViewController *loginController = [[FHSTwitterEngine sharedEngine] loginControllerWithCompletionHandler:^(BOOL success) {
+            if (success) {
+                // Login User
+            }
+        }];
+        [self presentViewController:loginController animated:YES completion:nil];
     }
     
     //[[self navigationController] setNavigationBarHidden:YES];
@@ -139,6 +148,32 @@
 
 - (IBAction)cancelLogin:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)handleTwitterAccounts:(NSArray *)twitterAccounts
+{
+    switch ([twitterAccounts count]) {
+        case 0:
+        {
+            [[FHSTwitterEngine sharedEngine] permanentlySetConsumerKey:COSTUMER_API_KEY andSecret:COSTUMER_API_SECRET];
+            UIViewController *loginController = [[FHSTwitterEngine sharedEngine] loginControllerWithCompletionHandler:^(BOOL success) {
+                if (success) {
+                    // Login User
+                }
+            }];
+            [self presentViewController:loginController animated:YES completion:nil];
+            
+        }
+            break;
+        /*case 1:
+            [self onUserTwitterAccountSelection:twitterAccounts[0]];
+            break;
+        default:
+            self.twitterAccounts = twitterAccounts;
+            [self displayTwitterAccounts:twitterAccounts];
+            break;*/
+    }
+    
 }
 
 
