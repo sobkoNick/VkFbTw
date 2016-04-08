@@ -15,6 +15,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KQ2-Ir-1eq"/>
+                        <segue destination="WFF-LD-IV8" kind="push" id="9eT-kT-33z"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gZ-gL-f4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,6 +66,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-293.5" y="-27.5"/>
+        </scene>
+        <!--News TableVC-->
+        <scene sceneID="khx-oK-9xh">
+            <objects>
+                <tableViewController storyboardIdentifier="NewsTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WFF-LD-IV8" customClass="NewsTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="369" sectionHeaderHeight="28" sectionFooterHeight="28" id="H9R-Yx-u1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="369" id="Gvz-Sm-gIQ" customClass="NewsCellTVC">
+                                <rect key="frame" x="0.0" y="92" width="375" height="369"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gvz-Sm-gIQ" id="fOz-K1-smW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="368"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zTw-fT-RLH">
+                                            <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvV-hF-Ke9">
+                                            <rect key="frame" x="33" y="33" width="25" height="25"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="groupName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-WB-xmC">
+                                            <rect key="frame" x="66" y="16" width="301" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfs-xR-fSn">
+                                            <rect key="frame" x="8" y="266" width="359" height="88"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="news title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfU-RO-ME1">
+                                            <rect key="frame" x="8" y="66" width="359" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7w-Mm-mL8">
+                                            <rect key="frame" x="8" y="106" width="359" height="152"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupImage" destination="zTw-fT-RLH" id="WsE-Yt-gzX"/>
+                                    <outlet property="groupName" destination="wF8-WB-xmC" id="Ifp-zG-1vf"/>
+                                    <outlet property="newsImage" destination="v7w-Mm-mL8" id="7om-cT-uYo"/>
+                                    <outlet property="newsText" destination="hfs-xR-fSn" id="2KX-Jy-QDf"/>
+                                    <outlet property="newsTitle" destination="rfU-RO-ME1" id="WNv-Ud-b2l"/>
+                                    <outlet property="socialImage" destination="dvV-hF-Ke9" id="EN6-6s-pdq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WFF-LD-IV8" id="8jk-7F-o8U"/>
+                            <outlet property="delegate" destination="WFF-LD-IV8" id="J4Q-nb-ZdT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rMM-mM-u11"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T4D-vC-A0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-293.5" y="753.5"/>
         </scene>
         <!--Web LoginVC-->
         <scene sceneID="lqA-7O-172">

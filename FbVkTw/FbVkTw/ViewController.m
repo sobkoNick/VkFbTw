@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "Constants.h"
 #import "WebLoginVC.h"
-
+#import "NewsTableVC.h"
 
 @interface ViewController ()
 
@@ -18,8 +18,9 @@
 @implementation ViewController
 {
     BOOL _viewDidAppear;
-    BOOL isToken;
+    BOOL isVKToken;
     BOOL isTwitterToken;
+    BOOL isFBtoken;
     
 }
 #pragma mark - program lifecycle
@@ -52,28 +53,49 @@
     loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     NSString *accessToken = [FBSDKAccessToken currentAccessToken];
     NSLog(@" token == %@", accessToken);
-    
+    if (accessToken == NULL) {
+        isFBtoken = NO;
+    }
+    else {
+        isFBtoken = YES;
+    }
     
     
     if ([[NSUserDefaults standardUserDefaults] valueForKey:VK_ACCESS_TOKEN_KEY]) {
         NSLog(@"viewContr tokern = %@", [[NSUserDefaults standardUserDefaults] valueForKey:VK_ACCESS_TOKEN_KEY]);
         //self.VKLoginBtn.titleLabel.text = @"Log out";
         [self.VKLoginBtn setTitle:@"Log Out from Vk" forState:UIControlStateNormal];
-        isToken = YES;
+        isVKToken = YES;
     }
     if ([[NSUserDefaults standardUserDefaults] valueForKey:TWITTER_ACCESS_TOKEN]) {
         [self.TWLoginBtn setTitle:@"Log Out from Twitter" forState:UIControlStateNormal];
         isTwitterToken = YES;
+    }
+    
+    if (isTwitterToken && isVKToken && isFBtoken) {
+        //SMMNewsViewController *smmNewsVC = [[SMMNewsViewController alloc] init];
+        //[self.parentViewController presentViewController:smmNewsVC animated:YES completion:nil];
+        
+        NewsTableVC *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsTableVC"];
+        [self.navigationController pushViewController:newView animated:YES];
+        
+        //NewsTableVC *viewController = [[NewsTableVC alloc] initWithNibName:@"NewsTableVC" bundle:nil];
+        
+        //[self.navigationController pushViewController:viewController animated:YES];
+        
+        //NewsTableVC *newsVc = [[NewsTableVC alloc] init];
+        
+        //[self presentViewController:newsVc animated:YES completion:nil];
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     if ([[NSUserDefaults standardUserDefaults] valueForKey:VK_ACCESS_TOKEN_KEY]) {
         [self.VKLoginBtn setTitle:@"Log Out from Vk" forState:UIControlStateNormal];
-        isToken = YES;
+        isVKToken = YES;
     } else {
         [self.VKLoginBtn setTitle:@"Log In to Vk" forState:UIControlStateNormal];
-        isToken = NO;
+        isVKToken = NO;
     }
     
     if ([[NSUserDefaults standardUserDefaults] valueForKey:TWITTER_ACCESS_TOKEN]) {
@@ -93,12 +115,12 @@
 
 - (IBAction)LogInOrLogOut:(id)sender {
     
-    if (isToken == YES) {
+    if (isVKToken == YES) {
          //[self saveLoginObject:nil forKey:ACCESS_TOKEN_KEY];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:VK_ACCESS_TOKEN_KEY];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self.VKLoginBtn setTitle:@"Log In to Vk" forState:UIControlStateNormal];
-        isToken = NO;
+        isVKToken = NO;
     } else {
         
         [[NSUserDefaults standardUserDefaults] setObject:@"Vk" forKey:WEB_LOGIN_TO];
@@ -142,3 +164,4 @@
 
 
 @end
+

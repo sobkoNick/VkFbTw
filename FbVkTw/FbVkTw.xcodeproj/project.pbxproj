@@ -12,6 +12,8 @@
 		1C5975A61BFF304300DCE1D8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5975A51BFF304300DCE1D8 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
 		1C5975A81BFF305300DCE1D8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5975A71BFF305300DCE1D8 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
 		1C68EDC51BFE65B30090090B /* Requests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C68EDC41BFE65B30090090B /* Requests.m */; settings = {ASSET_TAGS = (); }; };
+		1C69E3A61CB8003C00E9C7BC /* NewsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C69E3A51CB8003C00E9C7BC /* NewsTableVC.m */; settings = {ASSET_TAGS = (); }; };
+		1C69E3A91CB800CC00E9C7BC /* NewsCellTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C69E3A81CB800CC00E9C7BC /* NewsCellTVC.m */; settings = {ASSET_TAGS = (); }; };
 		1C9A8DA11C10F1AE00B0F8AC /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9A8DA01C10F1AE00B0F8AC /* libAFNetworking.a */; };
 		1CC1F1D51BFB69D700B755AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1D41BFB69D700B755AB /* main.m */; };
 		1CC1F1D81BFB69D700B755AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC1F1D71BFB69D700B755AB /* AppDelegate.m */; };
@@ -53,6 +55,10 @@
 		1C68EDC21BFE59780090090B /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
 		1C68EDC31BFE65B30090090B /* Requests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Requests.h; path = ../Requests.h; sourceTree = "<group>"; };
 		1C68EDC41BFE65B30090090B /* Requests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Requests.m; path = ../Requests.m; sourceTree = "<group>"; };
+		1C69E3A41CB8003C00E9C7BC /* NewsTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableVC.h; sourceTree = "<group>"; };
+		1C69E3A51CB8003C00E9C7BC /* NewsTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableVC.m; sourceTree = "<group>"; };
+		1C69E3A71CB800CC00E9C7BC /* NewsCellTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCellTVC.h; sourceTree = "<group>"; };
+		1C69E3A81CB800CC00E9C7BC /* NewsCellTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCellTVC.m; sourceTree = "<group>"; };
 		1C9A8DA01C10F1AE00B0F8AC /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
 		1CC1F1D01BFB69D700B755AB /* FbVkTw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FbVkTw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CC1F1D41BFB69D700B755AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,6 +141,17 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
+		1C69E3AA1CB800D200E9C7BC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				1C69E3A71CB800CC00E9C7BC /* NewsCellTVC.h */,
+				1C69E3A81CB800CC00E9C7BC /* NewsCellTVC.m */,
+				1C69E3A41CB8003C00E9C7BC /* NewsTableVC.h */,
+				1C69E3A51CB8003C00E9C7BC /* NewsTableVC.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		1CC1F1C71BFB69D700B755AB = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +183,7 @@
 				1C68EDC61BFE65C00090090B /* Requests */,
 				1CC1F1D91BFB69D700B755AB /* ViewController.h */,
 				1CC1F1DA1BFB69D700B755AB /* ViewController.m */,
+				1C69E3AA1CB800D200E9C7BC /* News */,
 				1CC1F2091BFB6D1400B755AB /* WebLoginVC */,
 				1CC1F1DC1BFB69D700B755AB /* Main.storyboard */,
 				1CC1F1DF1BFB69D700B755AB /* Assets.xcassets */,
@@ -416,9 +434,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C69E3A91CB800CC00E9C7BC /* NewsCellTVC.m in Sources */,
 				1C68EDC51BFE65B30090090B /* Requests.m in Sources */,
 				1C52F6EC1C07401F006147AE /* FHSStream.m in Sources */,
 				1C52F6ED1C07401F006147AE /* FHSTwitterEngine.m in Sources */,
+				1C69E3A61CB8003C00E9C7BC /* NewsTableVC.m in Sources */,
 				1CC1F1DB1BFB69D700B755AB /* ViewController.m in Sources */,
 				1CC1F1D81BFB69D700B755AB /* AppDelegate.m in Sources */,
 				1CC1F1D51BFB69D700B755AB /* main.m in Sources */,
